@@ -136,6 +136,10 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide transition={["fade"]} bgColor="primary">
           <Heading size={6} textColor="tertiary">Code</Heading>
+          <List>
+            <ListItem style={listItemStyle1}><a href="https://github.com/cy/meetdown-api">https://github.com/cy/meetdown-api</a></ListItem>
+            <ListItem style={listItemStyle1}><a href="https://github.com/cy/goodreads-graphql">https://github.com/cy/goodreads-graphql</a></ListItem>
+          </List>
         </Slide>
         <Slide transition={["fade"]} bgColor="primary">
           <Heading size={6} textColor="tertiary">Beyond this example part1</Heading>
