@@ -27,7 +27,8 @@ require("spectacle/lib/themes/default/index.css");
 const images = {
   erd: require("../assets/erd.jpg"),
   graphql: require("../assets/graphql-logo.svg"),
-  graphene: require("../assets/graphene-logo.svg")
+  graphene: require("../assets/graphene-logo.svg"),
+  pyladies: require("../assets/pylady_geek.png")
 };
 
 preloader(images);
@@ -62,13 +63,17 @@ export default class Presentation extends React.Component {
           <Text margin="10px 0 0" textColor="tertiary" size={1} fit bold>
             PyLadies Toronto Meetup, April 25, 2017
           </Text>
+          <Image src={images.graphql} height="120px" style={{ padding: "10px" }}/>
+          <Image src={images.pyladies} height="120px" style={{ padding: "10px" }}/>
+          <Image src={images.graphene} height="120px" style={{ padding: "10px" }}/>
         </Slide>
         <Slide transition={["fade"]} bgColor="primary">
           <Heading size={6} textColor="tertiary">Hello: I'm Christine</Heading>
           <List>
             <ListItem style={listItemStyle1}>Software developer at OICR: JS, Python</ListItem>
             <ListItem style={listItemStyle1}>Mobile developer: C++, Python</ListItem>
-            <ListItem style={listItemStyle1}>UBC: CS, Bio</ListItem>
+            <ListItem style={listItemStyle1}>https://github.com/cy</ListItem>
+            <ListItem style={listItemStyle1}>https://twitter.com/christinewhy</ListItem>
           </List>
         </Slide>
         <Slide transition={["fade"]} bgColor="primary">
@@ -79,6 +84,7 @@ export default class Presentation extends React.Component {
           <List>
             <ListItem style={listItemStyle1}>"A query language for your API"</ListItem>
             <ListItem style={listItemStyle1}>not a query language for a graph database</ListItem>
+            <ListItem style={listItemStyle1}>backend language and database layer agnostic</ListItem>
           </List>
           <Heading size={3} textColor="tertiary">
             Graphene
@@ -91,7 +97,7 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide transition={["fade"]} bgColor="primary">
           <Heading size={6} textColor="tertiary">Demo app, Meetdown API</Heading>
-          <Image src={images.erd} margin="0px auto 40px" height="293px"/>
+          <Image src={images.erd} margin="0px auto 40px" height="350px"/>
         </Slide>
         <Slide transition={["fade"]} bgColor="primary">
           <Heading size={6} textColor="tertiary">Motivation: Problems with REST</Heading>
@@ -101,12 +107,12 @@ export default class Presentation extends React.Component {
                 <ListItem style={listItemStyle2}>but most views need data from multiple resources</ListItem>
                 <ListItem style={listItemStyle2}>secondary calls, parameters, balloning custom endpoints</ListItem>
               </List>
+            <ListItem style={listItemStyle1}>front end devs at the mercy of backend devs</ListItem>
             <ListItem style={listItemStyle1}>versioning</ListItem>
               <List>
                 <ListItem style={listItemStyle2}>old api need to be maintained as long as old clients in use</ListItem>
                 <ListItem style={listItemStyle2}>mainly a problem with mobile</ListItem>
               </List>
-            <ListItem style={listItemStyle1}>front end devs at the mercy of backend devs</ListItem>
           </List>
         </Slide>
         <Slide transition={["fade"]} bgColor="primary">
@@ -118,23 +124,18 @@ export default class Presentation extends React.Component {
             <ListItem style={listItemStyle1}>Documentation for free</ListItem>
           </List>
         </Slide>
-        <Slide transition={["fade"]} bgColor="primary" notes="Summarized from Lee Byron's talk Lessons from 4 years with GraphQL, more features eg fragments">
+        <Slide transition={["fade"]} bgColor="primary">
           <Heading size={6} textColor="tertiary">History of GraphQL</Heading>
           <List>
             <ListItem style={listItemStyle1}>2012: inital design at facebook, production in iOS app</ListItem>
             <ListItem style={listItemStyle1}>2013-2014: more features, tools (GraphiQL)</ListItem>
             <ListItem style={listItemStyle1}>2015: announced at React Europe, redesign, open sourced spec</ListItem>
             <ListItem style={listItemStyle1}>2016: 10+ languages, Github public api</ListItem>
-            <ListItem style={listItemStyle1}>2017: live queries, streaming?</ListItem>
+            <ListItem style={listItemStyle1}>2017: live queries, more?</ListItem>
           </List>
         </Slide>
         <Slide transition={["fade"]} bgColor="primary">
-          <Heading size={4} textColor="tertiary">Demo</Heading>
-          <Heading size={6} textColor="secondary">Meetdown API</Heading>
-          <List>
-            <ListItem style={listItemStyle1}>REST endpoints</ListItem>
-            <ListItem style={listItemStyle1}>Graphene implmentation</ListItem>
-          </List>
+          <Heading size={6} textColor="tertiary">Code</Heading>
         </Slide>
         <Slide transition={["fade"]} bgColor="primary">
           <Heading size={6} textColor="tertiary">Beyond this example part1</Heading>
@@ -159,7 +160,7 @@ export default class Presentation extends React.Component {
               <ListItem style={listItemStyle1}>Efficency</ListItem>
                 <List>
                   <ListItem style={listItemStyle2}>Caching - global unique ids for each entity, varnish</ListItem>
-                  <ListItem style={listItemStyle2}>n+1 problem, batching with DataLoader</ListItem>
+                  <ListItem style={listItemStyle2}>Batching with DataLoader</ListItem>
                   <ListItem style={{ ...listItemStyle2, marginLeft: "6rem" }}>doesn't send request right away</ListItem>
                   <ListItem style={{ ...listItemStyle2, marginLeft: "6rem" }}>gathers up all the keys in the same frame, then batch request</ListItem>
                 </List>
